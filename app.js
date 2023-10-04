@@ -53,7 +53,7 @@ app.get("/addPage",async (req,res)=>{
     
 console.log(JSON.parse(my_file))*/
 
-    fs.appendFile('./tmp/mynewfile1.txt', nome+" "+cognome+" "+cf, function (err) {
+    fs.appendFile('/tmp/mynewfile1.txt', nome+" "+cognome+" "+cf, function (err) {
         if (err) throw err;
         console.log('Saved!');
       });    

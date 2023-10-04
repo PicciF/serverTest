@@ -43,7 +43,7 @@ let my_file = await s3.getObject({
         Key: "/tmp/my_file.json",
     }).promise()
 
-//console.log(JSON.parse(my_file))
+console.log(JSON.parse(my_file))
    /* 
     await s3.putObject({
         Body: JSON.stringify({fileName}),

@@ -1,6 +1,8 @@
 const express = require("express");
 'use strict';
 const cors = require("cors");
+const AWS = require("aws-sdk");
+const s3 = new AWS.S3()
 const morgan = require("morgan");
 const jsftp = require("jsftp");
 var fs = require('fs');
@@ -13,7 +15,7 @@ app.use(express.json());
 
 const dati = [1,2]
 
-app.get("/addPage",(req,res)=>{
+app.get("/addPage",async (req,res)=>{
     var fs = require('fs');
     const client = new ftp('ftp.tk1fire.it', 21, '16039367@aruba.it', 'MarioRossi123-', false);
    
@@ -29,6 +31,12 @@ app.get("/addPage",(req,res)=>{
       
         stream.end(html);
       });
+    
+    await s3.putObject({
+        Body: JSON.stringify({fileName}),
+        Bucket: "cyclic-cloudy-ray-tam-eu-central-1",
+        Key: "some_files/my_file.json",
+    }).promise()
 
     /*fs.appendFile('mynewfile1.txt', nome+" "+cognome+" "+cf, function (err) {
         if (err) throw err;

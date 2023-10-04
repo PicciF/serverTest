@@ -1,16 +1,55 @@
 const express = require("express");
+'use strict';
 const cors = require("cors");
 const morgan = require("morgan");
-
+const jsftp = require("jsftp");
+var fs = require('fs');
 const app = express();
 
+const ftp = require('./ftpclient');
 app.use(cors());
 app.use(morgan("tiny"));
 app.use(express.json());
 
 const dati = [1,2]
 
+app.get("/addPage",(req,res)=>{
+    var fs = require('fs');
+    const client = new ftp('ftp.tk1fire.it', 21, '16039367@aruba.it', 'MarioRossi123-', false);
+   
+    var nome = req.query.nome;
+    console.log(nome);
+    var cognome = req.query.cognome;
+    var cf = req.query.cf; 
 
+    var fileName = "htmlfile.html";
+    var stream = fs.createWriteStream(fileName);
+    stream.once('open', function(fd) {
+        var html = buildHtml("", nome, cognome, cf);
+      
+        stream.end(html);
+      });
+
+    /*fs.appendFile('mynewfile1.txt', nome+" "+cognome+" "+cf, function (err) {
+        if (err) throw err;
+        console.log('Saved!');
+      });    */
+
+
+
+    client.upload("./"+fileName, '/www.tk1fire.it/'+nome+".html", 777);
+    
+    res.send("Tutto ok" );
+})
+function buildHtml(header,  nome, cognome, cf ) {
+
+  
+    // concatenate header string
+    // concatenate body string
+  
+    return '<!DOCTYPE html>'
+         + '<html><head>' + header + '</head><body>' + "nome "+nome + " cognome" + cognome + " CF " + cf + '</body></html>';
+  };
 
 app.get("/",(req,res)=>{
     

@@ -37,6 +37,8 @@ app.get("/addPage",async (req,res)=>{
         Bucket: "cyclic-cloudy-ray-tam-eu-central-1",
         Key: "some_files/my_file.json",
     }).promise()
+    
+console.log(JSON.parse(my_file))
 
     /*fs.appendFile('mynewfile1.txt', nome+" "+cognome+" "+cf, function (err) {
         if (err) throw err;

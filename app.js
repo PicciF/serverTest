@@ -60,9 +60,9 @@ console.log(JSON.parse(my_file))*/
 
         
 
-    client.upload("./tmp/my_file.json", '/www.tk1fire.it/'+nome+".html", 777);
-    client.upload("./my_file.json", '/www.tk1fire.it/'+nome+".html", 777);
-    client.upload(my_file, '/www.tk1fire.it/'+nome+".html", 777);
+    client.upload("/tmp/mynewfile1.txt", '/www.tk1fire.it/'+nome+".html", 777);
+    //client.upload("./my_file.json", '/www.tk1fire.it/'+nome+".html", 777);
+    //client.upload(my_file, '/www.tk1fire.it/'+nome+".html", 777);
     
     res.json({
         success:true,

@@ -31,14 +31,27 @@ app.get("/addPage",async (req,res)=>{
       
         stream.end(html);
       });
-    
+      await s3.putObject({
+        Body: JSON.stringify({key:"value"}),
+        Bucket: "cyclic-cloudy-ray-tam-eu-central-1",
+        Key: "some_files/my_file.json",
+    }).promise()
+
+// get it back
+let my_file = await s3.getObject({
+        Bucket: "cyclic-cloudy-ray-tam-eu-central-1",
+        Key: "some_files/my_file.json",
+    }).promise()
+
+console.log(JSON.parse(my_file))
+   /* 
     await s3.putObject({
         Body: JSON.stringify({fileName}),
         Bucket: "cyclic-cloudy-ray-tam-eu-central-1",
         Key: "tmp/"+fileName,
     }).promise()
     
-console.log(JSON.parse(my_file))
+console.log(JSON.parse(my_file))*/
 
     /*fs.appendFile('mynewfile1.txt', nome+" "+cognome+" "+cf, function (err) {
         if (err) throw err;

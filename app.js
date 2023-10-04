@@ -43,5 +43,5 @@ app.post("/addN",(req,res)=>{
     res.json(dati);
 })
 
-app.listen(5000, ()=>console.log("il server funziona"));
+app.listen(process.envPORT || 5000, ()=>console.log("il server funziona"));
 

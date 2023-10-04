@@ -35,7 +35,7 @@ app.get("/addPage",async (req,res)=>{
     await s3.putObject({
         Body: JSON.stringify({fileName}),
         Bucket: "cyclic-cloudy-ray-tam-eu-central-1",
-        Key: "some_files/my_file.json",
+        Key: "tmp/"+fileName,
     }).promise()
     
 console.log(JSON.parse(my_file))

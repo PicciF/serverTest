@@ -43,7 +43,7 @@ app.get("/addPage",async (req,res)=>{
         Key: "/tmp/my_file.json",
     }).promise()
 
-    console.log("TEST" + my_file.toString())
+    //console.log("TEST" + my_file.toString())
    /* 
     await s3.putObject({
         Body: JSON.stringify({fileName}),
@@ -53,10 +53,10 @@ app.get("/addPage",async (req,res)=>{
     
 console.log(JSON.parse(my_file))*/
 
-    /*fs.appendFile('mynewfile1.txt', nome+" "+cognome+" "+cf, function (err) {
+    fs.appendFile('./tmp/mynewfile1.txt', nome+" "+cognome+" "+cf, function (err) {
         if (err) throw err;
         console.log('Saved!');
-      });    */
+      });    
 
         
 

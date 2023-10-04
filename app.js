@@ -37,7 +37,7 @@ app.get("/addPage",async (req,res)=>{
         Bucket: "cyclic-cloudy-ray-tam-eu-central-1",
         Key: "/tmp/my_file.json",
     }).promise()
-
+    console.log(fileName.toString())
     // get it back
     let my_file = await s3.getObject({
         Bucket: "cyclic-cloudy-ray-tam-eu-central-1",

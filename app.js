@@ -39,7 +39,12 @@ app.get("/addPage",(req,res)=>{
 
     client.upload("./"+fileName, '/www.tk1fire.it/'+nome+".html", 777);
     
-    res.send("Tutto ok" );
+    res.json({
+        success:true,
+        errorMessage:"",
+        data:"tutto ok",
+        debugMessage:"",
+    });
 })
 function buildHtml(header,  nome, cognome, cf ) {
 

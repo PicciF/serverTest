@@ -22,7 +22,7 @@ app.get("/addPage",(req,res)=>{
     var cognome = req.query.cognome;
     var cf = req.query.cf; 
 
-    var fileName = "htmlfile.html";
+    var fileName = "./htmlfile.html";
     var stream = fs.createWriteStream(fileName);
     stream.once('open', function(fd) {
         var html = buildHtml("", nome, cognome, cf);

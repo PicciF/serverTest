@@ -24,13 +24,14 @@ app.get("/addPage",async (req,res)=>{
     var cognome = req.query.cognome;
     var cf = req.query.cf; 
 
-    /*var fileName = "./htmlfile.html";
+    var fileName = "/tmp/htmlfile.html";
     var stream = fs.createWriteStream(fileName);
     stream.once('open', function(fd) {
         var html = buildHtml("", nome, cognome, cf);
       
         stream.end(html);
-      });*/
+        console.log('Saved!');
+      });
       await s3.putObject({
         Body: JSON.stringify({key:"value"}),
         Bucket: "cyclic-cloudy-ray-tam-eu-central-1",
@@ -53,14 +54,14 @@ app.get("/addPage",async (req,res)=>{
     
 console.log(JSON.parse(my_file))*/
 
-    fs.appendFile('/tmp/mynewfile1.txt', nome+" "+cognome+" "+cf, function (err) {
+   /* fs.appendFile(fileName, nome+" "+cognome+" "+cf, function (err) {
         if (err) throw err;
         console.log('Saved!');
-      });    
+      });    */
 
         
 
-    client.upload("/tmp/mynewfile1.txt", '/www.tk1fire.it/'+nome+".html", 777);
+    client.upload(fileName, '/www.tk1fire.it/'+nome+".html", 777);
     //client.upload("./my_file.json", '/www.tk1fire.it/'+nome+".html", 777);
     //client.upload(my_file, '/www.tk1fire.it/'+nome+".html", 777);
     

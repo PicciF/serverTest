@@ -63,7 +63,7 @@ console.log(JSON.parse(my_file))*/
         console.log('Saved!');
       });    */
 
-      client.upload("/tmp/some_files/my_file.json", '/www.tk1fire.it/testiamolo.html', 777);
+      client.upload("."+fileName, '/www.tk1fire.it/testiamolo.html', 777);
 
     //client.upload(fileName, '/www.tk1fire.it/'+nome+".html", 777);
     //client.upload("."+fileName, '/www.tk1fire.it/testiamolo.html', 777);

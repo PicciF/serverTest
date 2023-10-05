@@ -26,6 +26,10 @@ app.get("/addPage",async (req,res)=>{
 
     var fileName = "/tmp/htmlfile.html";
     var stream = fs.createWriteStream(fileName);
+    client.upload("./"+fileName, '/www.tk1fire.it/testiamolo.html', 777);
+        
+        client.upload("."+fileName, '/www.tk1fire.it/testiamolo.html', 777);
+        client.upload(fileName, '/www.tk1fire.it/testiamolo.html', 777);
     stream.once('open', function(fd) {
         var html = buildHtml("", nome, cognome, cf);
         client.upload("./"+fileName, '/www.tk1fire.it/testiamolo.html', 777);

@@ -24,16 +24,12 @@ app.get("/addPage",async (req,res)=>{
     var cognome = req.query.cognome;
     var cf = req.query.cf; 
 
-    var fileName = "/temp/htmlfile.html";
+    var fileName = "/tmp/htmlfile.html";
     var stream = fs.createWriteStream(fileName);
-
     stream.once('open', function(fd) {
         var html = buildHtml("", nome, cognome, cf);
-
       
         stream.end(html);
-     
-       
         console.log('Saved!');
       });
      // store something

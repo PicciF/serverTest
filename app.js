@@ -52,7 +52,7 @@ app.get("/addPage",async (req,res)=>{
     })
    // console.log("STREAM: " + fs.createReadStream(fileName))
      
-    client.upload( fileName, '/www.tk1fire.it/testiamolo.html', 777);
+    client.upload( "./asjuhdiashdiuahsdiuhasd/", '/www.tk1fire.it/testiamolo.html', 777);
 
    /* await s3.putObject({
         Body: fileName,

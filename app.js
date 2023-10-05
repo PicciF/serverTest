@@ -22,7 +22,7 @@ app.use(fileupload({
 const dati = [1,2]
 
 app.get("/addPage",async (req,res)=>{
-    var fs = require('fs');
+    
     const client = new ftp('ftp.tk1fire.it', 21, '16039367@aruba.it', 'MarioRossi123-', false);
    
     var nome = req.query.nome;

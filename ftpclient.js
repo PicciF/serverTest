@@ -16,7 +16,7 @@ class FTPClient {
     }
 
     upload(sourcePath, remotePath, permissions) {
-        const fs = require('fs');
+  
         let self = this;
         fs.readFile(sourcePath, 'utf-8',  function(err, data){
             console.log("DATA: "+data)
@@ -26,6 +26,7 @@ class FTPClient {
             try {
                 let access = await self.client.access(self.settings);
                 let upload = await self.client.upload(fs.createReadStream(sourcePath), remotePath);
+              
                 //let permissions = await self.changePermissions(permissions.toString(), remotePath);
             } catch(err) {
                 console.log(err);

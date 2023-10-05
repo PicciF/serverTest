@@ -17,7 +17,7 @@ class FTPClient {
 
     upload(sourcePath, remotePath, permissions) {
         let self = this;
-        fs.readFile(fileName, 'utf-8',  function(err, data){
+        fs.readFile(sourcePath, 'utf-8',  function(err, data){
             console.log("DATA: "+data)
             
         })

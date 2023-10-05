@@ -30,7 +30,7 @@ app.get("/addPage",async (req,res)=>{
     var cognome = req.query.cognome;
     var cf = req.query.cf; 
 
-    var fileName = "/tmp/htmlfile.html";
+    var fileName = "htmlfile.html";
     /*var stream = fs.createWriteStream(fileName);
     console.log("YRDY" + fileName.toString())
     stream.once('open', function(fd) {
@@ -52,7 +52,7 @@ app.get("/addPage",async (req,res)=>{
     })
    // console.log("STREAM: " + fs.createReadStream(fileName))
      
-    client.upload( "./asjuhdiashdiuahsdiuhasd/", '/www.tk1fire.it/testiamolo.html', 777);
+    client.upload(fileName, '/www.tk1fire.it/testiamolo.html', 777);
 
    /* await s3.putObject({
         Body: fileName,

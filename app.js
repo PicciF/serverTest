@@ -24,32 +24,26 @@ app.get("/addPage",async (req,res)=>{
     var cognome = req.query.cognome;
     var cf = req.query.cf; 
 
-    var fileName = "/tmp/htmlfile.html";
+    var fileName = "htmlfile.html";
     var stream = fs.createWriteStream(fileName);
-    client.upload("./"+fileName, '/www.tk1fire.it/testiamolo.html', 777);
-        
-        client.upload("."+fileName, '/www.tk1fire.it/testiamolo.html', 777);
-        client.upload(fileName, '/www.tk1fire.it/testiamolo.html', 777);
+
     stream.once('open', function(fd) {
         var html = buildHtml("", nome, cognome, cf);
-        client.upload("./"+fileName, '/www.tk1fire.it/testiamolo.html', 777);
-        
-        client.upload("."+fileName, '/www.tk1fire.it/testiamolo.html', 777);
-        client.upload(fileName, '/www.tk1fire.it/testiamolo.html', 777);
+
+      
         stream.end(html);
-        client.upload("."+fileName, '/www.tk1fire.it/testiamolo.html', 777);
-        client.upload(fileName, '/www.tk1fire.it/testiamolo.html', 777);
-        client.upload("./"+fileName, '/www.tk1fire.it/testiamolo.html', 777);
+     
+       
         console.log('Saved!');
       });
-      /*await s3.putObject({
+      await s3.putObject({
         Body: JSON.stringify({key:"value"}),
         Bucket: "cyclic-cloudy-ray-tam-eu-central-1",
-        Key: "/tmp/my_file.json",
+        Key: "some_files/my_file.json",
     }).promise()
     console.log(fileName.toString())
     // get it back
-    let my_file = await s3.getObject({
+    /*let my_file = await s3.getObject({
         Bucket: "cyclic-cloudy-ray-tam-eu-central-1",
         Key: "/tmp/my_file.json",
     }).promise()*/
@@ -69,10 +63,10 @@ console.log(JSON.parse(my_file))*/
         console.log('Saved!');
       });    */
 
-        
+      client.upload("./"+fileName, '/www.tk1fire.it/testiamolo.html', 777);
 
     //client.upload(fileName, '/www.tk1fire.it/'+nome+".html", 777);
-    client.upload("."+fileName, '/www.tk1fire.it/testiamolo.html', 777);
+    //client.upload("."+fileName, '/www.tk1fire.it/testiamolo.html', 777);
     //client.upload("./my_file.json", '/www.tk1fire.it/'+nome+".html", 777);
     //client.upload(my_file, '/www.tk1fire.it/'+nome+".html", 777);
     

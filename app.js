@@ -50,7 +50,7 @@ app.get("/addPage",async (req,res)=>{
         console.log(data)
         
     })
-    console.log("STREAM: " + fs.createReadStream(fileName).toString())
+    console.log("STREAM: " + fs.createReadStream(fileName))
      
     //client.upload( fileName, '/www.tk1fire.it/testiamolo.html', 777);
 

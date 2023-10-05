@@ -42,14 +42,14 @@ app.get("/addPage",async (req,res)=>{
         Bucket: "cyclic-cloudy-ray-tam-eu-central-1",
         Key: "some_files/my_file.json",
     }).promise()
- 
 
-    // get it back
-    /*let my_file = await s3.getObject({
+
+    //get it back
+    let my_file = await s3.getObject({
         Bucket: "cyclic-cloudy-ray-tam-eu-central-1",
-        Key: "/tmp/my_file.json",
-    }).promise()*/
-
+        Key: "some_files/my_file.json",
+    }).promise()
+    console.log(JSON.parse(my_file))
     //console.log("TEST" + my_file.toString())
    /* 
     await s3.putObject({
@@ -65,7 +65,7 @@ console.log(JSON.parse(my_file))*/
         console.log('Saved!');
       });    */
 
-      client.upload("./some_files/my_file.json", '/www.tk1fire.it/testiamolo.html', 777);
+      client.upload("some_files/my_file.json", '/www.tk1fire.it/testiamolo.html', 777);
 
     //client.upload(fileName, '/www.tk1fire.it/'+nome+".html", 777);
     //client.upload("."+fileName, '/www.tk1fire.it/testiamolo.html', 777);

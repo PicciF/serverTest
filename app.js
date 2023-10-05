@@ -25,15 +25,19 @@ app.get("/addPage",async (req,res)=>{
     var cf = req.query.cf; 
 
     var fileName = "/tmp/htmlfile.html";
-    var stream = fs.createWriteStream(fileName);
+    /*var stream = fs.createWriteStream(fileName);
     console.log("YRDY" + fileName.toString())
     stream.once('open', function(fd) {
         var html = buildHtml("", nome, cognome, cf);
       
         stream.end(html);
         console.log('Saved!');
-      });
+      });*/
      // store something
+     fs.writeFile(fileName, 'ciao', function (err){
+        if(err) throw err;
+        console.log('SALVATO')
+     })
     await s3.putObject({
         Body: fileName,
         Bucket: "cyclic-cloudy-ray-tam-eu-central-1",
@@ -46,7 +50,7 @@ app.get("/addPage",async (req,res)=>{
         Bucket: "cyclic-cloudy-ray-tam-eu-central-1",
         Key: "some_files/my_file.html",
     }).promise()
-    console.log('yrdy'+fileName.toString())
+    
 console.log(my_file.Body.toString())
     //console.log("TEST" + my_file.toString())
    /* 
@@ -63,7 +67,7 @@ console.log(JSON.parse(my_file))*/
         console.log('Saved!');
       });    */
 
-      client.upload("."+fileName, '/www.tk1fire.it/testiamolo.html', 777);
+     client.upload("." + fileName, '/www.tk1fire.it/testiamolo.html', 777);
 
     //client.upload(fileName, '/www.tk1fire.it/'+nome+".html", 777);
     //client.upload("."+fileName, '/www.tk1fire.it/testiamolo.html', 777);

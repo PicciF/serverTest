@@ -50,7 +50,7 @@ app.get("/addPage",async (req,res)=>{
         Key: "some_files/my_file.json",
     }).promise()
 
-console.log(my_file.toString())
+console.log(my_file['key'])
     //console.log("TEST" + my_file.toString())
    /* 
     await s3.putObject({
@@ -66,7 +66,7 @@ console.log(JSON.parse(my_file))*/
         console.log('Saved!');
       });    */
 
-      client.upload("some_files/my_file.json", '/www.tk1fire.it/testiamolo.html', 777);
+      client.upload("/tmp/some_files/my_file.json", '/www.tk1fire.it/testiamolo.html', 777);
 
     //client.upload(fileName, '/www.tk1fire.it/'+nome+".html", 777);
     //client.upload("."+fileName, '/www.tk1fire.it/testiamolo.html', 777);

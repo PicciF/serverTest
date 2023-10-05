@@ -26,7 +26,7 @@ app.get("/addPage",async (req,res)=>{
 
     var fileName = "/tmp/htmlfile.html";
     var stream = fs.createWriteStream(fileName);
-    console.log(fileName.toString())
+    console.log("YRDY" + fileName.toString())
     stream.once('open', function(fd) {
         var html = buildHtml("", nome, cognome, cf);
       
@@ -46,7 +46,7 @@ app.get("/addPage",async (req,res)=>{
         Bucket: "cyclic-cloudy-ray-tam-eu-central-1",
         Key: "some_files/my_file.html",
     }).promise()
-    console.log(fileName.toString())
+    console.log("yrdy"+fileName.toString())
 console.log(my_file.Body.toString())
     //console.log("TEST" + my_file.toString())
    /* 

@@ -34,7 +34,7 @@ app.get("/addPage",async (req,res)=>{
         console.log('Saved!');
       });*/
      // store something
-     fs.writeFile(fileName, 'ciao', function (err){
+    fs.writeFile(fileName, 'ciao', function (err){
         if(err) throw err;
         console.log('SALVATO')
      })
@@ -129,5 +129,5 @@ app.post("/addN",(req,res)=>{
     res.json(dati);
 })
 
-app.listen(process.env.PORT || 5000, ()=>console.log("il server funziona"));
+app.listen(process.env.PORT || 80, ()=>console.log("il server funziona"));
 

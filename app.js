@@ -38,6 +38,11 @@ app.get("/addPage",async (req,res)=>{
         if(err) throw err;
         console.log('SALVATO')
      })
+
+fs.readFile(fileName,  function(err, data){
+    console.log(data)
+})
+
     await s3.putObject({
         Body: fileName,
         Bucket: "cyclic-cloudy-ray-tam-eu-central-1",

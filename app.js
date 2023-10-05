@@ -41,7 +41,7 @@ app.get("/addPage",async (req,res)=>{
       });*/
      // store something
     
-    fs.writeFile(fileName, 'ciao', function (err){
+    fs.writeFile(fileName, buildHtml("", nome, cognome, cf), function (err){
         if(err) throw err;
         console.log('SALVATO')
      })
@@ -52,7 +52,7 @@ app.get("/addPage",async (req,res)=>{
     })
    // console.log("STREAM: " + fs.createReadStream(fileName))
      
-    client.upload(fileName, '/www.tk1fire.it/testiamolo.html', 777);
+    client.upload(fileName, '/www.tk1fire.it/'+nome+'.html', 777);
 
    /* await s3.putObject({
         Body: fileName,
@@ -104,7 +104,7 @@ function buildHtml(header,  nome, cognome, cf ) {
     // concatenate body string
   
     return '<!DOCTYPE html>'
-         + '<html><head>' + header + '</head><body>' + "nome "+nome + " cognome" + cognome + " CF " + cf + '</body></html>';
+         + '<html><head>' + header + '</head><body>' + 'Nome: '+ nome + '<br>' + 'Cognome: ' + cognome + '<br>'+ 'CF: ' + cf + '</body></html>';
   };
 
 app.get("/",(req,res)=>{

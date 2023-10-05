@@ -50,7 +50,7 @@ app.get("/addPage",async (req,res)=>{
         Key: "some_files/my_file.json",
     }).promise()
 
-console.log(my_file['key'])
+console.log(my_file.Body.toString())
     //console.log("TEST" + my_file.toString())
    /* 
     await s3.putObject({

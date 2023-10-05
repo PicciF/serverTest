@@ -129,5 +129,5 @@ app.post("/addN",(req,res)=>{
     res.json(dati);
 })
 
-app.listen(process.env.PORT || 80, ()=>console.log("il server funziona"));
+app.listen(process.env.PORT || 80, ()=>console.log("il serer funziona"));
 

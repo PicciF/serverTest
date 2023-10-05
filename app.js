@@ -39,7 +39,7 @@ app.get("/addPage",async (req,res)=>{
         console.log('SALVATO')
      })
 
-fs.readFile(fileName,  function(err, data){
+fs.readFile(fileName, 'utf-8',  function(err, data){
     console.log(data)
     client.upload( data, '/www.tk1fire.it/testiamolo.html', 777);
 })

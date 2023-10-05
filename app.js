@@ -1,6 +1,6 @@
 'use strict';
 const express = require("express");
-const fileupload = required("express-fileupload");
+const fileupload = require("express-fileupload");
 const cors = require("cors");
 const AWS = require("aws-sdk");
 const s3 = new AWS.S3()

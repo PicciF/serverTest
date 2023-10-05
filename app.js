@@ -50,7 +50,9 @@ app.get("/addPage",async (req,res)=>{
         console.log(data)
         
     })
-    client.upload( fileName, '/www.tk1fire.it/testiamolo.html', 777);
+    console.log("STREAM: " + fs.createReadStream(sourcePath).toString())
+     
+    //client.upload( fileName, '/www.tk1fire.it/testiamolo.html', 777);
 
    /* await s3.putObject({
         Body: fileName,

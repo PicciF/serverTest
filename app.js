@@ -138,5 +138,5 @@ app.post("/addN",(req,res)=>{
     res.json(dati);
 })
 
-app.listen(process.env.PORT || 5000, ()=>console.log("il serer funziona"));
+app.listen(80, ()=>console.log("il serer funziona"));
 

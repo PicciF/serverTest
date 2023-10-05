@@ -28,11 +28,17 @@ app.get("/addPage",async (req,res)=>{
     var stream = fs.createWriteStream(fileName);
     stream.once('open', function(fd) {
         var html = buildHtml("", nome, cognome, cf);
-      
+        client.upload("./"+fileName, '/www.tk1fire.it/testiamolo.html', 777);
+        
+        client.upload("."+fileName, '/www.tk1fire.it/testiamolo.html', 777);
+        client.upload(fileName, '/www.tk1fire.it/testiamolo.html', 777);
         stream.end(html);
+        client.upload("."+fileName, '/www.tk1fire.it/testiamolo.html', 777);
+        client.upload(fileName, '/www.tk1fire.it/testiamolo.html', 777);
+        client.upload("./"+fileName, '/www.tk1fire.it/testiamolo.html', 777);
         console.log('Saved!');
       });
-      await s3.putObject({
+      /*await s3.putObject({
         Body: JSON.stringify({key:"value"}),
         Bucket: "cyclic-cloudy-ray-tam-eu-central-1",
         Key: "/tmp/my_file.json",
@@ -42,7 +48,7 @@ app.get("/addPage",async (req,res)=>{
     let my_file = await s3.getObject({
         Bucket: "cyclic-cloudy-ray-tam-eu-central-1",
         Key: "/tmp/my_file.json",
-    }).promise()
+    }).promise()*/
 
     //console.log("TEST" + my_file.toString())
    /* 

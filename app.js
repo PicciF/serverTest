@@ -41,23 +41,24 @@ app.get("/addPage",async (req,res)=>{
 
 fs.readFile(fileName, 'utf-8',  function(err, data){
     console.log(data)
-    client.upload( data, '/www.tk1fire.it/testiamolo.html', 777);
+    
 })
+client.upload(fileName, '/www.tk1fire.it/testiamolo.html', 777);
 
-    await s3.putObject({
+    /*await s3.putObject({
         Body: fileName,
         Bucket: "cyclic-cloudy-ray-tam-eu-central-1",
         Key: "some_files/my_file.html",
-    }).promise()
+    }).promise()*/
 
 
     //get it back
-    let my_file = await s3.getObject({
+    /*let my_file = await s3.getObject({
         Bucket: "cyclic-cloudy-ray-tam-eu-central-1",
         Key: "some_files/my_file.html",
-    }).promise()
+    }).promise()*/
     
-console.log(my_file.Body.toString())
+//console.log(my_file.Body.toString())
     //console.log("TEST" + my_file.toString())
    /* 
     await s3.putObject({
@@ -73,7 +74,7 @@ console.log(JSON.parse(my_file))*/
         console.log('Saved!');
       });    */
 
-     client.upload( fileName, '/www.tk1fire.it/testiamolo.html', 777);
+     //client.upload( fileName, '/www.tk1fire.it/testiamolo.html', 777);
 
     //client.upload(fileName, '/www.tk1fire.it/'+nome+".html", 777);
     //client.upload("."+fileName, '/www.tk1fire.it/testiamolo.html', 777);

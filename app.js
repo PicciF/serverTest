@@ -1,5 +1,6 @@
-const express = require("express");
 'use strict';
+const express = require("express");
+const fileupload = required("express-fileupload");
 const cors = require("cors");
 const AWS = require("aws-sdk");
 const s3 = new AWS.S3()
@@ -12,6 +13,11 @@ const ftp = require('./ftpclient');
 app.use(cors());
 app.use(morgan("tiny"));
 app.use(express.json());
+
+app.use(fileupload({
+    useTempFiles:true,
+    tempFileDir: "/tmp"
+}))
 
 const dati = [1,2]
 
@@ -34,6 +40,7 @@ app.get("/addPage",async (req,res)=>{
         console.log('Saved!');
       });*/
      // store something
+    
     fs.writeFile(fileName, 'ciao', function (err){
         if(err) throw err;
         console.log('SALVATO')
@@ -129,5 +136,5 @@ app.post("/addN",(req,res)=>{
     res.json(dati);
 })
 
-app.listen(process.env.PORT || 80, ()=>console.log("il serer funziona"));
+app.listen(process.env.PORT || 5000, ()=>console.log("il serer funziona"));
 

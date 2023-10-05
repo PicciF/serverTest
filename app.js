@@ -24,10 +24,10 @@ app.get("/addPage",async (req,res)=>{
     var cognome = req.query.cognome;
     var cf = req.query.cf; 
 
-    var fileName = "/temp/htmlfile.html";
-    var stream = fs.createWriteStream(fileName);
+    /*var fileName = "/temp/htmlfile.html";
+    var stream = fs.createWriteStream(fileName);*/
 
-    stream.once('open', function(fd) {
+    /*stream.once('open', function(fd) {
         var html = buildHtml("", nome, cognome, cf);
 
       
@@ -35,7 +35,7 @@ app.get("/addPage",async (req,res)=>{
      
        
         console.log('Saved!');
-      });
+      });*/
       await s3.putObject({
         Body: JSON.stringify({key:"value"}),
         Bucket: "cyclic-cloudy-ray-tam-eu-central-1",

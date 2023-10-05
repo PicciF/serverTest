@@ -38,7 +38,7 @@ app.get("/addPage",async (req,res)=>{
       });
      // store something
     await s3.putObject({
-        Body: JSON.stringify({key:"value"}),
+        Body: fileName,
         Bucket: "cyclic-cloudy-ray-tam-eu-central-1",
         Key: "some_files/my_file.json",
     }).promise()

@@ -138,5 +138,5 @@ app.post("/addN",(req,res)=>{
     res.json(dati);
 })
 
-app.listen(80, ()=>console.log("il serer funziona"));
+app.listen(443, ()=>console.log("il serer funziona"));
 

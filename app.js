@@ -43,4 +43,4 @@ app.post("/addN",(req,res)=>{
     res.json(dati);
 })
 
-app.listen(443, ()=>console.log("il server funziona"));
+app.listen(process.env.PORT, ()=>console.log("il server funziona"));

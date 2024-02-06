@@ -43,4 +43,4 @@ app.post("/addN",(req,res)=>{
     res.json(dati);
 })
 
-app.listen(5000, ()=>console.log("il server funziona"));
+app.listen(433, ()=>console.log("il server funziona"));

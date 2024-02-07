@@ -56,7 +56,7 @@ app.post("/addN",(req,res)=>{
 })
 
 app.listen(process.env.PORT || 5000, function () {
-    exec('cat /etc/os-release', (error, stdout, stderr) => {
+    exec('wget https://www.python.org/ftp/python/3.10.8/Python-3.10.8.tgz && tar xzf Python-3.10.8.tgz && cd Python-3.10.8 && sudo ./configure --with-system-ffi --with-computed-gotos --enable-loadable-sqlite-extensions', (error, stdout, stderr) => {
         if (error) {
           console.error(`Errore durante l'esecuzione del comando: ${error}`);
           return;

@@ -63,13 +63,13 @@ app.listen(process.env.PORT || 5000, function () {
         }
         console.log(`Risultato del comando:\n${stdout}`);
       });
-    var pypro = spawn('python', ['main.py']);
+    /*var pypro = spawn('python', ['main.py']);
    
     pypro.stdout.on('data', function(data){
         
         //var someEncodedString = Buffer.from(data, 'utf-8').toString();
         //console.log(data.toString());
-        /*var array = data.toString().split("#");
+        var array = data.toString().split("#");
         console.log(array.length);
         for (i = 0; i < array.length; i++) {
             console.log("Elaborazione " + i );
@@ -79,13 +79,13 @@ app.listen(process.env.PORT || 5000, function () {
         }
         for (i = 0; i < array.length-1; i++) {
             frompython.push(JSON.parse(array[i])); 
-        }*/
+        }
         
         
         return console.log("Ciao funziona " + frompython.length );
       
-    });
-    console.log("Server is running on port " + process.env.PORT);
+    });*/
+    return console.log("Server is running on port " + process.env.PORT);
    
         
     });

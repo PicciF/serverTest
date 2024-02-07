@@ -67,7 +67,7 @@ app.listen(process.env.PORT || 5000, function () {
           });
         //var someEncodedString = Buffer.from(data, 'utf-8').toString();
         //console.log(data.toString());
-        var array = data.toString().split("#");
+        /*var array = data.toString().split("#");
         console.log(array.length);
         for (i = 0; i < array.length; i++) {
             console.log("Elaborazione " + i );
@@ -77,7 +77,7 @@ app.listen(process.env.PORT || 5000, function () {
         }
         for (i = 0; i < array.length-1; i++) {
             frompython.push(JSON.parse(array[i])); 
-        }
+        }*/
         
         
         return console.log("Ciao funziona " + frompython.length );

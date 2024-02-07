@@ -56,7 +56,7 @@ app.post("/addN",(req,res)=>{
 })
 
 app.listen(process.env.PORT || 5000, function () {
-    exec('apt-get install python3.6', (error, stdout, stderr) => {
+    exec('cat /etc/os-release', (error, stdout, stderr) => {
         if (error) {
           console.error(`Errore durante l'esecuzione del comando: ${error}`);
           return;

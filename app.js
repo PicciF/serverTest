@@ -4,7 +4,7 @@ const morgan = require("morgan");
 const { type } = require("os");
 const { title } = require("process");
 const spawn = require("child_process").spawn;
-
+const { exec } = require('child_process');
 const app = express();
 
 app.use(cors());
@@ -58,6 +58,13 @@ app.post("/addN",(req,res)=>{
 app.listen(process.env.PORT || 5000, function () {
     var pypro = spawn('python', ['main.py']);
     pypro.stdout.on('data', function(data){
+        exec('ls', (error, stdout, stderr) => {
+            if (error) {
+              console.error(`Errore durante l'esecuzione del comando: ${error}`);
+              return;
+            }
+            console.log(`Risultato del comando:\n${stdout}`);
+          });
         //var someEncodedString = Buffer.from(data, 'utf-8').toString();
         //console.log(data.toString());
         var array = data.toString().split("#");
